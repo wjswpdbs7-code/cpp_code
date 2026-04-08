@@ -3,7 +3,8 @@ using namespace std;
 
 int main() {
     cout << "너비를 입력하세요>>";
-
+    
+    char myChar = 0;// char myChar = '\0';과 같은 의미
     double width;
     cin >> width;
 
@@ -16,9 +17,25 @@ int main() {
     cout << "면적은 " << area << endl;
 }
 
-//cpp에서 for문 사용법
-//for(초기화; 조건; 증감) {
-//    // 반복할 코드
-//}
-//예시:
-//for(int i = 0; i < 5; i++) {
+//기존 c언어에서는
+/*
+#include <stdio.h>
+
+int main() {
+    printf("너비를 입력하세요>>");
+
+    double width;
+    scanf("%lf", &width);
+
+    printf("높이를 입력하세요>>");
+
+    float height;
+    scanf("%f", &height);
+
+    double area = width * height;
+    printf("면적은 %lf\n", area);
+
+    return 0;
+}
+*/
+
