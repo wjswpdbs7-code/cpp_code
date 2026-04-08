@@ -5,12 +5,11 @@ using namespace std;
 int main() {
     int i;
     for(i = 0; i < 5; i++) {
-        cout << i;
+        cout << i << endl;
     }
     cout << endl; // 줄바꿈
     return 0; // 프로그램 종료
 }
-
 //c언어로 변경하는 경우
 // #include<stdio.h>
 
