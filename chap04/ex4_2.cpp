@@ -7,7 +7,7 @@ public:
     Circle() { radius = 2; }
     Circle(int r) { radius = r; } //생성자 오버로딩, Circle 객체를 생성할 때 반지름을 지정할 수 있도록 함
     void setRadius(int r) { radius = r; } //반지름을 설정하는 멤버 함수, Circle 객체의 반지름을 변경할 수 있도록 함 Circle(int r) { radius = r; } 과 같은 역할을 하지만, setRadius 함수는 객체가 생성된 후에도 반지름을 변경할 수 있도록 함
-    double getArea();
+    double getArea(); 
 };
 
 double Circle::getArea(){
@@ -15,7 +15,7 @@ double Circle::getArea(){
 }
 
 int main(){
-    Circle circleArray[3]; //  
+    Circle circleArray[3]; //  ex4_2_1.cpp와의 차이점은 Circle 객체 배열을 사용하여 여러 개의 Circle 객체를 생성한다는 것이다. circleArray는 Circle 객체를 3개 저장할 수 있는 배열로, 각 요소는 Circle 클래스의 객체이다. 이 배열을 사용하여 여러 개의 Circle 객체를 생성하고, 각 객체의 반지름을 설정한 후에 면적을 계산하여 출력할 수 있다. 
 
 
     circleArray[0].setRadius(10); // 첫 번째 Circle 객체의 반지름을 10으로 설정
@@ -30,6 +30,8 @@ int main(){
     p = circleArray; // 포인터 p가 Circle 객체 배열의 첫 번째 요소를 가리키도록 설정 &를 사용하지 않는 이유 
     for(int i = 0; i < 3; i++){
         cout << "Circle " << i << "의 면적은 " << p->getArea() << endl; // 포인터 p가 가리키는 Circle 객체의 면적을 출력
-        p++; // 포인터 p를 다음 Circle 객체로 이동
+        p++; // 포인터 p를 다음 Circle 객체로 이동 
     }
 }
+
+//
