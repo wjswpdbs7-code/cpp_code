@@ -3,23 +3,33 @@ using namespace std;
 
 class Circle
 {
-public://
-    int radius;//반지름
-    double getArea();//원의 면적을 구하는 함수
+private:// 
+    int radius = 10;
+public:
+    double getArea();
+    int read_radius();
+    void write_radius(int r);
 };
 
 double Circle::getArea(){
     return 3.14 * radius * radius;
 }
 
+int Circle::read_radius(){
+    return radius;
+}
+    void Circle::write_radius(int r){
+    radius = r;
+}
+
 int main() {
     Circle donut;
-    donut.radius = 1;
+    donut.write_radius(1);
     double area = donut.getArea();
     cout << "donut의 면적은 " << area << endl;
 
     Circle pizza;
-    pizza.radius = 30;
+    pizza.write_radius(30);
     area = pizza.getArea();
     cout << "pizza의 면적은 " << area << endl;
 }
@@ -30,3 +40,4 @@ int main() {
 
 //이 코드에서 오브젝트
 //Circle 클래스는 원을 나타내는 클래스로, radius라는 멤버 변수를 가지고 있습니다. getArea()라는 멤버 함수를 통해 원의 면적을 계산할 수 있습니다. main 함수에서는 Circle 클래스의 객체인 donut과 pizza를 생성하고, 각각의 반지름을 설정한 후 getArea() 함수를 호출하여 면적을 계산하고 출력합니다. 따라서 이 코드에서 오브젝트는 Circle 클래스의 인스턴스인 donut과 pizza입니다.
+
