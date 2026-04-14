@@ -10,11 +10,22 @@
 using namespace std;
 
 int main(){
+
+    int count;
     int num = 0;//전체 문자열 개수
     string *all_str = new string[num];
-    for(int i = 0; i < ; i++){
-        if(all_Str[i]
-    }
 
+//==========================문자열 개수 세기=====================================
+    // while(num < count){
+    //     if 
+        
+    // }
     
+
+//==========================문자열 재배치========================================
+    // for(){
+
+    // }
+
+    delete[] all_str;
 }
