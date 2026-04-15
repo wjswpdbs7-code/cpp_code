@@ -312,8 +312,48 @@ using namespace std;
 
 // }
 
+// #include <cstring>
+
+// int main(){
+    
+//     char buf[100];
+    
+//     int len = 0;
+//     int count = 0;
+
+//     cin.getline(buf,100);
+//     cout << buf << endl;
+
+//     while(buf[len] != '\0'){
+//     len = len + 1;
+//     }
+//     //len = 첫번째 문자열 배열 개수
+
+    
+    
+
+
+//     return 0;
+// }
+
+//
 //getline, strcmp사용법 숙지하기
 
+
+
+// int main(){
+
+//     char buf1[100] = {0,};
+//     char buf2[100] = {0,};
+
+//     cout << "문자열을 입력하세요\n";
+//     cin >> buf1;
+
+//     cout << "문자열을 입력하세요\n";
+//     cin >> buf2;
+
+
+// }
 
 //========================================================================================================================================빈칸없는 문자열입력받고 각문자 분리하여 출력
 // #include<string>
