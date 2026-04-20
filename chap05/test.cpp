@@ -209,34 +209,223 @@ using namespace std;
 
 //===========================================================================================get 멤버함수=============================
 
-class Colar
-{
-    int r, g, b;
+// class Colar
+// {
+//     int r, g, b;
+// public:
+//     Colar(int r, int g, int b);
+
+//     void get(int &red, int&green, int &blue);
+// };
+// Colar::Colar(int r, int g, int b){
+//     this->r = r;
+//     this->g = g;
+//     this->b = b;
+// }
+
+// void Colar::get(int &red, int &green, int &blue){
+//     red = r;
+//     green = g;
+//     blue = b;// 순서 주의
+// }
+// int main(){
+//     Colar fore(255, 0, 0), back(15, 128,200); //객체 두개 생성
+//     int r, g, b;
+//     fore.get(r, g, b);//rgb 
+//     cout << "red=" << r << ",green=" << g << ",blue=" << b << endl;
+//     back.get(r, g, b);
+//     cout << "red=" << r << ",green=" << g << ",blue=" << b << endl;
+// }
+// //원하는 출력값
+// //red=255,green=0,blue=0
+// //red=15,green=200,blue=200
+
+//======================================================================================================================== 253p =================================================================
+// #define _CRT_SECURE_NO_WARNINGS
+// #include<iostream>
+// #include<cstring>
+// using namespace std;
+
+// class Book
+// {
+// private:
+//     double pr;
+//     int pa;
+//     char *title;
+//     char *author;
+
+// public:
+//     Book(double pr, int pa, const char* title, const char* author);
+//     Book(const Book &book);
+//     ~Book();
+// };
+
+// Book::Book(double pr, int pa, const char* title, const char* author){
+//     this->pr = pr;
+//     this->pa = pa;
+//     strcpy(this->title, title);
+//     strcpy(this->author, author);
+// }
+
+// Book::Book(const Book &Book){
+//     this->pr = Book.pr; 
+// }
+
+// Book::~Book(){
+
+// }
+
+//=================================================================================== 5chap 실습 9(복사생성자)=============================================================================
+// class MyStack
+// {
+// private:
+//     int p[10];
+//     int tos=0;// top of stack
+// public:
+//     MyStack();
+//     bool push(int n);
+//     bool pop(int& n);
+// }; 
+
+// MyStack::MyStack()//
+// {
+//     for(int i = 0; i < 10; i++){
+//         p[i] = 0;
+//     }
+//     tos = 0;
+// }
+// bool MyStack::push(int n){//차있으면 f 아니면 t
+//     if(this-> tos < 10){
+//         p[this -> tos] = n;
+//         tos++;
+//         return true;
+//     }
+//     else{
+//         return false;
+//     }
+// }
+// bool MyStack::pop(int &n){//값 받아오고 지우기 비어있으면 f 아니면 t
+//     if(this-> tos > 0){
+//         tos--;
+//         n = p[this ->tos];
+//         return true;
+//     }
+//     else{
+//         return false;
+//     }
+// }   
+
+// int main(){
+//     MyStack st;
+
+//     for(int i = 0; i < 11; i++){
+//         if (st.push(i)) {
+//             cout << i << ' ';//push(i)가 false일때까지 
+//         }
+//         else {
+//             cout << endl << i+1 << "번째 푸시 실패! 스택 차 있음" << endl;
+//         }
+//     }
+//     int n;
+//         for(int i = 0; i < 11; i++){
+//         if (st.pop(n)) cout << n << ' ';
+//         else cout << endl << i+1 << "번째 팝 실패! 스택이 비어 있음" << endl;
+//     }
+// }
+//========================================================================================================================= 5chap 실습 11(복사생성자)=============================================================================
+
+//저장 가능한 스택 개수를 지정가능하게
+// class MyStack
+// {
+// private:
+//     int *p;// 정수를 저장할 동적 배열에 대한 포인터
+//     int size = 0;// 할당 받은 동적 배열의 크기. 초기값 0
+//     int tos = 0;// top of stack 다음에 저장될 배열 요소(원소)의 인덱스(배열 번호) 초기값 0
+// public:
+//     MyStack();
+//     MyStack(int size);
+//     MyStack(const MyStack &src);
+//     ~MyStack();
+//     bool push(int n);
+//     bool pop(int& n);
+// };
+// MyStack::MyStack(){
+
+// }
+// MyStack::MyStack(int size){
+
+// }
+
+// MyStack::MyStack(const MyStack &src){
+
+// }
+
+// MyStack::~MyStack(){
+    
+// }
+// bool MyStack::push(int n){//차있으면 f 아니면 t
+//     if(this-> tos < size){
+//         p[this -> tos] = n;
+//         tos++;
+//         return true;
+//     }
+//     else{
+//         return false;
+//     }
+// }
+// bool MyStack::pop(int &n){//값 받아오고 지우기 비어있으면 f 아니면 t
+//     if(this-> tos > 0){
+//         tos--;
+//         n = p[this ->tos];
+//         return true;
+//     }
+//     else{
+//         return false;
+//     }
+// }   
+
+
+// int main(){
+//     MyStack a(10);//10개 공간을 가진 객체 생성
+//     a.push(10);//0번에 10
+//     a.push(20);//1번에 20
+
+//     MyStack b = a;
+//     b.push(30);
+//     int n;// 값 받아올 변수
+//     a.pop(n);
+//     cout << "스택 a에서 팝한 값 " << n << endl;
+//     b.pop(n);
+//     cout << "스택 b에서 팝한 값 " << n << endl;
+// }
+//========================================================================================================================== 5chap 실습 6 276p =================================================================
+
+class Polygon{
+    int size=0;
+    int *xList, *yList;
 public:
-    Colar(int r, int g, int b);
-
-    void get(int &red, int&green, int &blue);
+    Polygon(int size);
+    ~Polygon();
+    void read();
+    int get(int p1, int p2, int p3);
 };
-Colar::Colar(int r, int g, int b){
-    this->r = r;
-    this->g = g;
-    this->b = b;
+
+Polygon::Polygon(int size){
+
+}
+Polygon::~Polygon(){
+
+}
+void Polygon::read(){
+
+}
+int Polygon::get(int p1, int p2, int p3){
+
 }
 
-void Colar::get(int &red, int &green, int &blue){//g에 b에 값을 넣기? 
-    r = red;
-    g = green;
-    b = blue;
-    g = b;
-}
 int main(){
-    Colar fore(255, 0, 0), back(15, 128,200); //객체 두개 생성
-    int r, g, b;
-    fore.get(r, g, b);
-    cout << "red=" << r << ",green=" << b << ",blue=" << b << endl;
-    back.get(r, g, b);
-    cout << "red=" << r << ",green=" << b << ",blue=" << b << endl;
+    Polygon poly(6);
+    poly.read();
+    int n = 3, x, y;
+    bool res = poly.get(n, x, y);
 }
-//원하는 출력값
-//red=255,green=0,blue=0
-//red=15,green=200,blue=200
